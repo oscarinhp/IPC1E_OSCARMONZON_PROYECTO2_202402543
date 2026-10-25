@@ -30,7 +30,7 @@ adelanta, se pueden subir 3 o más en un día.
   `NodoSimple`, `NodoDoble`, `ListaSimple` y `ListaDoble` con inserción,
   búsqueda, eliminación, actualización y recorridos.
 
-- [ ] **3. `feat(estructuras): cola fifo y pila lifo`**  
+- [x] **3. `feat(estructuras): cola fifo y pila lifo`**  
   `Cola` con `encolar`/`desencolar` y `Pila` con `apilar`/`desapilar`,
   implementadas con nodos propios.
 

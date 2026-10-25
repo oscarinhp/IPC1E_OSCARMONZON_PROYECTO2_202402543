@@ -24,7 +24,8 @@ semántico; el plan completo está en [`PLAN_COMMITS.md`](PLAN_COMMITS.md).
 
 - [x] Etapa 1: estructura inicial, compilación y ventana base.
 - [x] Etapa 2: nodos propios, lista doble de residentes y lista simple de vehículos.
-- [ ] Etapas 3 a 16: cola, pila, modelo, hilos, persistencia, interfaz y documentación.
+- [x] Etapa 3: cola FIFO y pila LIFO propias (sincronizadas para hilos).
+- [ ] Etapas 4 a 16: modelo, parqueo, hilos, persistencia, interfaz y documentación.
 
 ## Tecnologías y restricciones
 
