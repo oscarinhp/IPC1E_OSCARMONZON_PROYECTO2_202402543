@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Ejecutar Parque Residencial",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "Proyecto2_Parqueo",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

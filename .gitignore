@@ -1,0 +1,19 @@
+# Compilados de Java
+out/
+*.class
+
+# Configuración local de IDE (VS Code sí se conserva)
+.idea/
+*.iml
+nbproject/private/
+nbbuild/
+dist/*.log
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# El .jar ejecutable SÍ se versiona porque es un requisito del proyecto.
+# Los archivos de datos de ejemplo también se versionan.
