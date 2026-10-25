@@ -22,11 +22,11 @@ adelanta, se pueden subir 3 o más en un día.
 
 ## Commits
 
-- [ ] **1. `chore: estructura inicial, build y README`**  
+- [x] **1. `chore: estructura inicial, build y README`**  
   Paquetes base, `.gitignore`, scripts `build.bat`/`build.sh`, `run.bat`,
   configuración de VS Code, ventana inicial y plan de trabajo.
 
-- [ ] **2. `feat(estructuras): nodos, lista doble y lista simple`**  
+- [x] **2. `feat(estructuras): nodos, lista doble y lista simple`**  
   `NodoSimple`, `NodoDoble`, `ListaSimple` y `ListaDoble` con inserción,
   búsqueda, eliminación, actualización y recorridos.
 

@@ -23,7 +23,8 @@ semántico; el plan completo está en [`PLAN_COMMITS.md`](PLAN_COMMITS.md).
 ## Estado actual
 
 - [x] Etapa 1: estructura inicial, compilación y ventana base.
-- [ ] Etapas 2 a 16: estructuras, modelo, hilos, persistencia, interfaz y documentación.
+- [x] Etapa 2: nodos propios, lista doble de residentes y lista simple de vehículos.
+- [ ] Etapas 3 a 16: cola, pila, modelo, hilos, persistencia, interfaz y documentación.
 
 ## Tecnologías y restricciones
 
