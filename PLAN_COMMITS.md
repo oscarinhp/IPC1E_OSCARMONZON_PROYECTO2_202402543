@@ -34,7 +34,7 @@ adelanta, se pueden subir 3 o más en un día.
   `Cola` con `encolar`/`desencolar` y `Pila` con `apilar`/`desapilar`,
   implementadas con nodos propios.
 
-- [ ] **4. `feat(modelo): residentes, vehiculos y validaciones`**  
+- [x] **4. `feat(modelo): residentes, vehiculos y validaciones`**  
   `Residente`, `Vehiculo`, enums de tipo/estado, límite de 3 vehículos por
   residente y validación de placas únicas.
 
