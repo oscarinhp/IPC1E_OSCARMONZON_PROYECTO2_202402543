@@ -38,7 +38,7 @@ adelanta, se pueden subir 3 o más en un día.
   `Residente`, `Vehiculo`, enums de tipo/estado, límite de 3 vehículos por
   residente y validación de placas únicas.
 
-- [ ] **5. `feat(modelo): parqueo 150 espacios y reglas de socios`**  
+- [x] **5. `feat(modelo): parqueo 150 espacios y reglas de socios`**  
   `Parqueo` como lista doble de listas simples: A–C con 25 espacios y E–I con
   15. Asignación, liberación y control del área de socios.
 

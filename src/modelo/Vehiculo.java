@@ -18,6 +18,7 @@ public class Vehiculo {
 
     private EstadoVehiculo estado;
     private Residente residente;
+    private EspacioParqueo espacioAsignado;
 
     /**
      * Crea el vehículo de un residente.
@@ -114,6 +115,19 @@ public class Vehiculo {
 
     public void setResidente(Residente residente) {
         this.residente = residente;
+    }
+
+    /**
+     * Espacio de parqueo asignado al vehículo, si está estacionado.
+     *
+     * @return el espacio o {@code null} si no está en el parqueo
+     */
+    public EspacioParqueo getEspacioAsignado() {
+        return espacioAsignado;
+    }
+
+    public void setEspacioAsignado(EspacioParqueo espacioAsignado) {
+        this.espacioAsignado = espacioAsignado;
     }
 
     /**
