@@ -1,6 +1,7 @@
 package modelo;
 
 import estructuras.ListaSimple;
+import estructuras.NodoSimple;
 
 /**
  * Fila del parqueo: guarda la letra, el tipo de zona y la lista simple de
@@ -35,6 +36,28 @@ public class FilaParqueo {
      */
     public void agregarEspacio(EspacioParqueo espacio) {
         espacios.agregar(espacio);
+    }
+
+    /**
+     * Obtiene el espacio de esta fila por su número dentro de la fila.
+     *
+     * @param numero posición del espacio (1-based)
+     * @return el espacio o {@code null} si no existe
+     */
+    public EspacioParqueo obtenerEspacio(int numero) {
+        if (numero < 1) {
+            return null;
+        }
+        NodoSimple nodo = espacios.getInicio();
+        int indice = 1;
+        while (nodo != null) {
+            if (indice == numero) {
+                return (EspacioParqueo) nodo.getDato();
+            }
+            indice++;
+            nodo = nodo.getSiguiente();
+        }
+        return null;
     }
 
     public char getLetra() {

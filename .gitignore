@@ -15,5 +15,9 @@ Thumbs.db
 *.tmp
 *.bak
 
+# Carpeta generada por build.bat / build.sh. El JAR se versiona aparte,
+# como entregable, con: git add -f dist/Proyecto2_Parqueo.jar
+dist/
+
 # El .jar ejecutable SÍ se versiona porque es un requisito del proyecto.
 # Los archivos de datos de ejemplo también se versionan.

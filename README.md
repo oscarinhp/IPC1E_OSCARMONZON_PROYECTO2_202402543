@@ -27,7 +27,8 @@ semántico; el plan completo está en [`PLAN_COMMITS.md`](PLAN_COMMITS.md).
 - [x] Etapa 3: cola FIFO y pila LIFO propias (sincronizadas para hilos).
 - [x] Etapa 4: modelo de residentes y vehículos con reglas de negocio.
 - [x] Etapa 5: parqueo con lista doble de listas simples y reglas de zonas.
-- [ ] Etapas 6 a 16: hilos, persistencia, interfaz y documentación.
+- [x] Etapa 6: 5 garitas como hilos concurrentes con sincronización.
+- [ ] Etapas 7 a 16: persistencia, interfaz y documentación.
 
 ## Tecnologías y restricciones
 

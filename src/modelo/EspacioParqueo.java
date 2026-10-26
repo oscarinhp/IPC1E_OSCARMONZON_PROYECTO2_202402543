@@ -15,6 +15,12 @@ public class EspacioParqueo {
     private final TipoEspacio tipo;
     private Vehiculo vehiculo;
 
+    /** Espacio de la fila de arriba (doble) en esta misma columna. */
+    private EspacioParqueo arriba;
+
+    /** Espacio de la fila de abajo (doble) en esta misma columna. */
+    private EspacioParqueo abajo;
+
     /**
      * Crea un espacio de parqueo libre.
      *
@@ -26,7 +32,7 @@ public class EspacioParqueo {
         this.fila = fila;
         this.numero = numero;
         this.tipo = tipo;
-        this.id = fila + "-" + String.format("%02d", numero);
+        this.id = fila + String.valueOf(numero);
         this.vehiculo = null;
     }
 
@@ -73,6 +79,22 @@ public class EspacioParqueo {
 
     public TipoEspacio getTipo() {
         return tipo;
+    }
+
+    public EspacioParqueo getArriba() {
+        return arriba;
+    }
+
+    public void setArriba(EspacioParqueo arriba) {
+        this.arriba = arriba;
+    }
+
+    public EspacioParqueo getAbajo() {
+        return abajo;
+    }
+
+    public void setAbajo(EspacioParqueo abajo) {
+        this.abajo = abajo;
     }
 
     public Vehiculo getVehiculo() {

@@ -12,7 +12,9 @@ import estructuras.NodoSimple;
  * anterior/siguiente de esa lista son los enlaces "arriba/abajo" entre filas,
  * y cada fila lleva su propia {@code ListaSimple} de espacios. Se crean las
  * filas A, B y C con 25 espacios cada una (socios) y las filas E, F, G, H
- * e I con 15 espacios cada una (general), para un total de 150 espacios.</p>
+ * e I con 15 espacios cada una (general), para un total de 150 espacios.
+ * Además, cada espacio guarda directamente sus referencias arriba/abajo para
+ * que el nodo físico quedó enlazado en las dos direcciones.</p>
  */
 public class Parqueo {
 
@@ -36,6 +38,43 @@ public class Parqueo {
             agregarFila(fila, TipoEspacio.GENERAL, ESPACIOS_POR_FILA_GENERAL);
         }
         totalEspacios = obtenerTotalEspacios();
+        enlazarEspaciosVerticales();
+    }
+
+    /**
+     * Enlaza cada espacio directamente con los espacios de la misma columna de
+     * la fila de abajo, para que el nodo físico tenga sus referencias
+     * arriba/abajo aunque las filas tengan distinta cantidad de espacios.
+     */
+    private void enlazarEspaciosVerticales() {
+        FilaParqueo[] filasArreglo = obtenerFilasOrdenadas();
+        for (int i = 0; i < filasArreglo.length - 1; i++) {
+            FilaParqueo filaArriba = filasArreglo[i];
+            FilaParqueo filaAbajo = filasArreglo[i + 1];
+            int columnasComunes = Math.min(
+                    filaArriba.getNumeroEspacios(),
+                    filaAbajo.getNumeroEspacios());
+            for (int columna = 1; columna <= columnasComunes; columna++) {
+                EspacioParqueo espacioArriba = filaArriba.obtenerEspacio(columna);
+                EspacioParqueo espacioAbajo = filaAbajo.obtenerEspacio(columna);
+                espacioArriba.setAbajo(espacioAbajo);
+                espacioAbajo.setArriba(espacioArriba);
+            }
+        }
+    }
+
+    /**
+     * Copia las filas de la lista doble a un arreglo, en orden.
+     *
+     * @return arreglo de filas
+     */
+    private FilaParqueo[] obtenerFilasOrdenadas() {
+        FilaParqueo[] arreglo = new FilaParqueo[filas.getTamanio()];
+        Object[] datos = filas.aArreglo();
+        for (int i = 0; i < datos.length; i++) {
+            arreglo[i] = (FilaParqueo) datos[i];
+        }
+        return arreglo;
     }
 
     /**

@@ -42,7 +42,7 @@ adelanta, se pueden subir 3 o más en un día.
   `Parqueo` como lista doble de listas simples: A–C con 25 espacios y E–I con
   15. Asignación, liberación y control del área de socios.
 
-- [ ] **6. `feat(hilos): garitas concurrentes y sincronizacion`**  
+- [x] **6. `feat(hilos): garitas concurrentes y sincronizacion`**  
   `SistemaParqueo`, `GaritaEntrada` y `GaritaSalida`. 3 garitas de entrada y 2
   de salida, `synchronized`, `wait()` en ciclo `while` y `notifyAll()`.
 
