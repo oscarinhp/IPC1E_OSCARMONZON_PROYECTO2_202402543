@@ -58,6 +58,16 @@ public class SistemaParqueo {
     public Residente registrarResidenteConId(String id, String nombre, String casa,
                                              boolean socio) {
         synchronized (this) {
+            if (nombre == null || nombre.isBlank()) {
+                throw new IllegalArgumentException("Se requiere el nombre del residente.");
+            }
+            if (casa == null || casa.isBlank()) {
+                throw new IllegalArgumentException("Se requiere el número de casa.");
+            }
+            if (nombre.contains("|") || casa.contains("|") || id.contains("|")) {
+                throw new IllegalArgumentException(
+                        "El separador | está reservado para los archivos de datos.");
+            }
             Residente residente = new Residente(id, nombre, casa, socio);
             if (residentes.contiene(residente)) {
                 throw new IllegalArgumentException(
@@ -221,6 +231,17 @@ public class SistemaParqueo {
             if (existePlaca(placa)) {
                 throw new IllegalArgumentException(
                         "La placa " + placa + " ya está en uso en el sistema.");
+            }
+            if (placa == null || marca == null || modelo == null || color == null
+                    || placa.isBlank() || marca.isBlank() || modelo.isBlank()
+                    || color.isBlank()) {
+                throw new IllegalArgumentException(
+                        "Todos los datos del vehículo son obligatorios.");
+            }
+            if (placa.contains("|") || marca.contains("|") || modelo.contains("|")
+                    || color.contains("|")) {
+                throw new IllegalArgumentException(
+                        "El separador | está reservado para los archivos de datos.");
             }
             Vehiculo vehiculo = new Vehiculo(placa, marca, modelo, color, tipo);
             residente.agregarVehiculo(vehiculo);

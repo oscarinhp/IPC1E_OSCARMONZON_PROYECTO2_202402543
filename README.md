@@ -28,7 +28,32 @@ semántico; el plan completo está en [`PLAN_COMMITS.md`](PLAN_COMMITS.md).
 - [x] Etapa 4: modelo de residentes y vehículos con reglas de negocio.
 - [x] Etapa 5: parqueo con lista doble de listas simples y reglas de zonas.
 - [x] Etapa 6: 5 garitas como hilos concurrentes con sincronización.
-- [ ] Etapas 7 a 16: persistencia, interfaz y documentación.
+- [x] Etapa 7: persistencia en `.txt` con el formato del enunciado.
+- [ ] Etapas 8 a 16: interfaz gráfica y documentación.
+
+## Formato de los archivos de datos
+
+El separador es la barra vertical `|`.
+
+**`datos/residentes.txt`**
+
+```text
+ID|NOMBRE|CASA|SOCIO
+R001|Ana López|Casa 12|S
+R002|Carlos Méndez|Casa 5|N
+```
+
+**`datos/vehiculos.txt`**
+
+```text
+PLACA|MARCA|MODELO|COLOR|ID_RESIDENTE
+P123ABC|Toyota|Corolla|Blanco|R001
+P456DEF|Honda|Civic|Rojo|R001
+```
+
+Las líneas vacías o mal formadas se omiten con un aviso y la carga continúa.
+Los visitantes nunca se guardan en los archivos porque son información
+temporal.
 
 ## Tecnologías y restricciones
 

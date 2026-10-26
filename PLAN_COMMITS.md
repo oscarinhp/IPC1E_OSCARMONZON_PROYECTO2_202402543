@@ -46,7 +46,7 @@ adelanta, se pueden subir 3 o más en un día.
   `SistemaParqueo`, `GaritaEntrada` y `GaritaSalida`. 3 garitas de entrada y 2
   de salida, `synchronized`, `wait()` en ciclo `while` y `notifyAll()`.
 
-- [ ] **7. `feat(persistencia): archivos txt y reconstruccion`**  
+- [x] **7. `feat(persistencia): archivos txt y reconstruccion`**  
   `GestorArchivos` para guardar y cargar residentes y vehículos. Los visitantes
   no se persisten.
 
