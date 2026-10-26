@@ -50,7 +50,7 @@ adelanta, se pueden subir 3 o más en un día.
   `GestorArchivos` para guardar y cargar residentes y vehículos. Los visitantes
   no se persisten.
 
-- [ ] **8. `feat(vista): ventana principal y panel de residentes`**  
+- [x] **8. `feat(vista): ventana principal y panel de residentes`**  
   Ventana con pestañas, tema visual y CRUD de residentes con recorrido de la
   lista en ambos sentidos.
 
