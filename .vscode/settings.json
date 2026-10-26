@@ -2,6 +2,7 @@
   "java.project.sourcePaths": ["src"],
   "java.project.outputPath": "out/classes",
   "java.project.referencedLibraries": [],
+  "java.configuration.updateBuildConfiguration": "automatic",
   "files.encoding": "utf8",
   "files.eol": "\n",
   "editor.tabSize": 4,
