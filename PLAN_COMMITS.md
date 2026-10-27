@@ -54,7 +54,7 @@ adelanta, se pueden subir 3 o más en un día.
   Ventana con pestañas, tema visual y CRUD de residentes con recorrido de la
   lista en ambos sentidos.
 
-- [ ] **9. `feat(vista): panel de vehiculos`**  
+- [x] **9. `feat(vista): panel de vehiculos`**  
   Selección de residente, alta y baja de vehículos, validación de 0 a 3 y
   recorrido de la lista simple.
 

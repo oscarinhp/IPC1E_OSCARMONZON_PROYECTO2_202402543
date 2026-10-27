@@ -30,7 +30,8 @@ semántico; el plan completo está en [`PLAN_COMMITS.md`](PLAN_COMMITS.md).
 - [x] Etapa 6: 5 garitas como hilos concurrentes con sincronización.
 - [x] Etapa 7: persistencia en `.txt` con el formato del enunciado.
 - [x] Etapa 8: ventana principal y panel de residentes.
-- [ ] Etapas 9 a 16: paneles restantes y documentación.
+- [x] Etapa 9: panel de vehículos por residente (máximo 3).
+- [ ] Etapas 10 a 16: paneles restantes y documentación.
 
 ## Formato de los archivos de datos
 
