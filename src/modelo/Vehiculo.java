@@ -138,7 +138,7 @@ public class Vehiculo {
      */
     public String getPropietario() {
         if (visitante) {
-            return nombreVisitante + " (Visitor)";
+            return nombreVisitante + " (Visitante)";
         }
         if (residente == null) {
             return "Sin propietario";

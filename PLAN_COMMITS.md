@@ -58,7 +58,7 @@ adelanta, se pueden subir 3 o más en un día.
   Selección de residente, alta y baja de vehículos, validación de 0 a 3 y
   recorrido de la lista simple.
 
-- [ ] **10. `feat(vista): panel de parqueo en tiempo real`**  
+- [x] **10. `feat(vista): panel de parqueo en tiempo real`**  
   Los 150 espacios con colores, contadores, leyenda y detalle del vehículo
   estacionado.
 
