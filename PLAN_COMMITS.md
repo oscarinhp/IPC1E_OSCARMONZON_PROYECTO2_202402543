@@ -66,7 +66,7 @@ adelanta, se pueden subir 3 o más en un día.
   Colas visibles, estado de las 5 garitas, vehículo atendido y registro
   temporal de visitantes.
 
-- [ ] **12. `feat(vista): historial lifo y actualizacion invokeLater`**  
+- [x] **12. `feat(vista): historial lifo y actualizacion invokeLater`**  
   Panel de eventos con los más recientes primero y actualización de la interfaz
   desde los hilos con `SwingUtilities.invokeLater`.
 

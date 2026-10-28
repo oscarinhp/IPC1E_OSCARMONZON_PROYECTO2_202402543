@@ -39,6 +39,7 @@ public class VentanaPrincipal extends JFrame {
     private PanelParqueo panelParqueo;
     private PanelEntrada panelEntrada;
     private PanelSalida panelSalida;
+    private PanelEventos panelEventos;
     private JLabel etiquetaEstado;
 
     /**
@@ -115,7 +116,7 @@ public class VentanaPrincipal extends JFrame {
         pestanas.addTab("Parqueo", panelParqueo = new PanelParqueo(sistema));
         pestanas.addTab("Entrada", panelEntrada = new PanelEntrada(sistema));
         pestanas.addTab("Salida", panelSalida = new PanelSalida(sistema));
-        pestanas.addTab("Eventos", marcador("Se agrega en la etapa 12"));
+        pestanas.addTab("Eventos", panelEventos = new PanelEventos(sistema));
 
         contenido.add(pestanas, BorderLayout.CENTER);
 
@@ -175,6 +176,7 @@ public class VentanaPrincipal extends JFrame {
         panelParqueo.actualizar();
         panelEntrada.actualizar();
         panelSalida.actualizar();
+        panelEventos.actualizar();
         actualizarEstado();
     }
 
