@@ -185,11 +185,13 @@ public class PanelEntrada extends JPanel {
                 texto.append(" | ");
             }
             GaritaEntrada garita = garitas[i];
-            texto.append(garita.getNombre()).append(": ");
-            if (garita.estaAtendiendo()) {
-                texto.append(atendiendo(garita.getVehiculoAtendido()));
+            if (garita != null) {
+                texto.append(garita.getNombre()).append(": ");
+                texto.append(garita.estaAtendiendo()
+                        ? "atendiendo " + garita.getVehiculoAtendido()
+                        : "libre");
             } else {
-                texto.append("libre");
+                texto.append("Entrada-").append(i + 1).append(": pendiente");
             }
         }
         etiquetaGaritas.setText(texto.toString());

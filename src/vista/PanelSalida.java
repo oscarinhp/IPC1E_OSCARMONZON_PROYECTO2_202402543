@@ -166,10 +166,14 @@ public class PanelSalida extends JPanel {
                 texto.append(" | ");
             }
             GaritaSalida garita = garitas[i];
-            texto.append(garita.getNombre()).append(": ");
-            texto.append(garita.estaAtendiendo()
-                    ? "atendiendo " + garita.getVehiculoAtendido()
-                    : "libre");
+            if (garita != null) {
+                texto.append(garita.getNombre()).append(": ");
+                texto.append(garita.estaAtendiendo()
+                        ? "atendiendo " + garita.getVehiculoAtendido()
+                        : "libre");
+            } else {
+                texto.append("Salida-").append(i + 1).append(": pendiente");
+            }
         }
         etiquetaGaritas.setText(texto.toString());
     }
