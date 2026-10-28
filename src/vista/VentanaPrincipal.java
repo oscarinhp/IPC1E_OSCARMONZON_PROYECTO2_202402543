@@ -37,6 +37,8 @@ public class VentanaPrincipal extends JFrame {
     private PanelResidentes panelResidentes;
     private PanelVehiculos panelVehiculos;
     private PanelParqueo panelParqueo;
+    private PanelEntrada panelEntrada;
+    private PanelSalida panelSalida;
     private JLabel etiquetaEstado;
 
     /**
@@ -79,6 +81,12 @@ public class VentanaPrincipal extends JFrame {
      */
     public void setAdministradorGaritas(AdministradorGaritas administrador) {
         this.administradorGaritas = administrador;
+        if (panelEntrada != null) {
+            panelEntrada.setAdministradorGaritas(administrador);
+        }
+        if (panelSalida != null) {
+            panelSalida.setAdministradorGaritas(administrador);
+        }
     }
 
     /**
@@ -105,8 +113,8 @@ public class VentanaPrincipal extends JFrame {
         panelVehiculos = new PanelVehiculos(sistema);
         pestanas.addTab("Vehículos", panelVehiculos);
         pestanas.addTab("Parqueo", panelParqueo = new PanelParqueo(sistema));
-        pestanas.addTab("Entrada", marcador("Se agrega en la etapa 11"));
-        pestanas.addTab("Salida", marcador("Se agrega en la etapa 11"));
+        pestanas.addTab("Entrada", panelEntrada = new PanelEntrada(sistema));
+        pestanas.addTab("Salida", panelSalida = new PanelSalida(sistema));
         pestanas.addTab("Eventos", marcador("Se agrega en la etapa 12"));
 
         contenido.add(pestanas, BorderLayout.CENTER);
@@ -165,6 +173,8 @@ public class VentanaPrincipal extends JFrame {
         panelResidentes.actualizar();
         panelVehiculos.actualizar();
         panelParqueo.actualizar();
+        panelEntrada.actualizar();
+        panelSalida.actualizar();
         actualizarEstado();
     }
 

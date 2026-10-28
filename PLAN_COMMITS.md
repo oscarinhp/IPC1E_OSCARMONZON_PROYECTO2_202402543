@@ -62,7 +62,7 @@ adelanta, se pueden subir 3 o más en un día.
   Los 150 espacios con colores, contadores, leyenda y detalle del vehículo
   estacionado.
 
-- [ ] **11. `feat(vista): entrada, salida, garitas y visitantes`**  
+- [x] **11. `feat(vista): entrada, salida, garitas y visitantes`**  
   Colas visibles, estado de las 5 garitas, vehículo atendido y registro
   temporal de visitantes.
 
