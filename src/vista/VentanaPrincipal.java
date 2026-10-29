@@ -2,11 +2,13 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -15,6 +17,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
@@ -107,6 +111,8 @@ public class VentanaPrincipal extends JFrame {
     private JPanel crearContenido() {
         JPanel contenido = new JPanel(new BorderLayout());
 
+        contenido.add(crearBarraSimulacion(), BorderLayout.NORTH);
+
         JTabbedPane pestanas = new JTabbedPane();
         panelResidentes = new PanelResidentes(sistema);
         pestanas.addTab("Residentes", panelResidentes);
@@ -139,6 +145,96 @@ public class VentanaPrincipal extends JFrame {
         JLabel etiqueta = new JLabel(texto, SwingConstants.CENTER);
         panel.add(etiqueta, BorderLayout.CENTER);
         return panel;
+    }
+
+    /**
+     * Barra con los botones de simulación del flujo completo: llegada → cola
+     * → garita → espacio → salida → eventos.
+     *
+     * @return barra de simulación
+     */
+    private JPanel crearBarraSimulacion() {
+        JPanel barra = new JPanel(new FlowLayout(FlowLayout.LEFT, 6, 4));
+
+        JButton botonVisitante = new JButton("Simular llegada de visitante");
+        botonVisitante.setToolTipText("Registra un visitante con datos "
+                + "aleatorios y lo manda a la cola de entrada; las garitas "
+                + "lo atienden y le asignan un espacio.");
+        botonVisitante.addActionListener(e -> ejecutarSimulacion(true));
+
+        JButton botonSalida = new JButton("Simular salida");
+        botonSalida.setToolTipText("Pide la salida de un vehículo "
+                + "estacionado al azar; su espacio queda libre.");
+        botonSalida.addActionListener(e -> ejecutarSimulacion(false));
+
+        JButton botonRafaga = new JButton("Simular 10 movimientos");
+        botonRafaga.setToolTipText("Llegadas y salidas mixtas para llenar "
+                + "el historial y ver la parte concurrente del sistema.");
+        botonRafaga.addActionListener(e -> ejecutarRafaga());
+
+        barra.add(botonVisitante);
+        barra.add(botonSalida);
+        barra.add(botonRafaga);
+        return barra;
+    }
+
+    /**
+     * Ejecuta una ráfaga de 10 pasos: creamos residentes y visitantes que
+     * llegan, intercambiando con salidas cuando hay estacionados.
+     */
+    private void ejecutarRafaga() {
+        StringBuilder resumen = new StringBuilder();
+        for (int paso = 0; paso < 10; paso++) {
+            try {
+                String resultado;
+                if (paso % 2 == 0) {
+                    resultado = paso % 4 == 0
+                            ? Simulador.simularResidente(sistema)
+                            : Simulador.simularVisitante(sistema);
+                } else {
+                    resultado = Simulador.simularSalida(sistema);
+                    if (resultado == null) {
+                        resultado = Simulador.simularVisitante(sistema);
+                    }
+                }
+                resumen.append(paso + 1).append(". ").append(resultado)
+                        .append('\n');
+            } catch (IllegalArgumentException e) {
+                resumen.append(paso + 1).append(". No se pudo: ")
+                        .append(e.getMessage()).append('\n');
+            }
+        }
+        JTextArea areaResumen = new JTextArea(resumen.toString(), 16, 60);
+        areaResumen.setEditable(false);
+        areaResumen.setFont(Tema.FUENTE_MONO);
+        JOptionPane.showMessageDialog(this, new JScrollPane(areaResumen),
+                "Ráfaga de simulación", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    /**
+     * Ejecuta un paso de simulación mostrando el resultado en la barra de
+     * estado o el error en un cuadro de validación.
+     *
+     * @param llegada {@code true} para simular una llegada; {@code false}
+     *                para una salida
+     */
+    private void ejecutarSimulacion(boolean llegada) {
+        try {
+            String resultado = llegada
+                    ? Simulador.simularVisitante(sistema)
+                    : Simulador.simularSalida(sistema);
+            if (resultado == null) {
+                JOptionPane.showMessageDialog(this,
+                        "No hay vehículos estacionados todavía.",
+                        "Simulación", JOptionPane.WARNING_MESSAGE);
+            } else {
+                etiquetaEstado.setText(resultado);
+            }
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(),
+                    "Validación de la simulación",
+                    JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     /**

@@ -70,7 +70,7 @@ adelanta, se pueden subir 3 o más en un día.
   Panel de eventos con los más recientes primero y actualización de la interfaz
   desde los hilos con `SwingUtilities.invokeLater`.
 
-- [ ] **13. `feat(integracion): simulacion completa y flujo general`**  
+- [x] **13. `feat(integracion): simulacion completa y flujo general`**  
   Integración llegada → cola → garita → espacio → salida → pila, botones de
   simulación y mensajes de validación.
 

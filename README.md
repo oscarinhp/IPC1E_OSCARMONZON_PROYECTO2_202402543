@@ -34,6 +34,7 @@ semántico; el plan completo está en [`PLAN_COMMITS.md`](PLAN_COMMITS.md).
 - [x] Etapa 10: mapa visual del parqueo con búsqueda por espacio.
 - [x] Etapa 11: paneles de entrada y salida con visitantes y estado de garitas.
 - [x] Etapa 12: historial de eventos (pila LIFO) con filtros.
+- [x] Etapa 13: simulación completa (llegada → cola → garita → espacio → salida → eventos).
 - [ ] Etapas 10 a 16: paneles restantes y documentación.
 
 ## Formato de los archivos de datos
