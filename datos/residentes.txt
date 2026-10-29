@@ -1,0 +1,8 @@
+R001|Ana Lopez|Casa 12|S
+R002|Carlos Ruiz|Casa 8|S
+R003|Maria Perez|Casa 23|N
+R004|Luis Garcia|Casa 41|S
+R005|Sofia Ramirez|Casa 17|N
+R006|Pedro Tun|Casa 55|N
+R007|Lucia Morales|Casa 3|S
+R008|Diego Cifuentes|Casa 19|N

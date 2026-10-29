@@ -1,0 +1,8 @@
+P123ABC|Toyota|Hilux 2020|Rojo|R001
+P987XYZ|Honda|Civic 2019|Azul|R001
+M456DEF|Yamaha|FZ 2021|Negro|R002
+P555QRT|Mazda|3 2021|Blanco|R003
+P222LKN|Kia|Rio 2018|Plata|R004
+M771GHS|Suzuki|GSX 2022|Verde|R005
+P888WWW|Hyundai|Tucson 2022|Gris|R007
+P410BCD|Nissan|Sentra 2020|Blanco|R008

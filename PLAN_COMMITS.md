@@ -74,7 +74,7 @@ adelanta, se pueden subir 3 o más en un día.
   Integración llegada → cola → garita → espacio → salida → pila, botones de
   simulación y mensajes de validación.
 
-- [ ] **14. `chore: jar ejecutable y datos de ejemplo`**  
+- [x] **14. `chore: jar ejecutable y datos de ejemplo`**  
   `dist/Proyecto2_Parqueo.jar`, archivos `datos/residentes.txt` y
   `datos/vehiculos.txt`, verificación de compilación desde el repositorio.
 
