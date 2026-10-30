@@ -36,7 +36,8 @@ semántico; el plan completo está en [`PLAN_COMMITS.md`](PLAN_COMMITS.md).
 - [x] Etapa 12: historial de eventos (pila LIFO) con filtros.
 - [x] Etapa 13: simulación completa (llegada → cola → garita → espacio → salida → eventos).
 - [x] Etapa 14: JAR ejecutable versionado y datos de ejemplo en `datos/`.
-- [ ] Etapas 10 a 16: paneles restantes y documentación.
+- [x] Etapa 15: [manual técnico](docs/Manual_Tecnico.md) y [diagramas](docs/diagramas/Clases_y_Flujo.md).
+- [ ] Etapa 16: manual de usuario con capturas e informe de desarrollo.
 
 ## Formato de los archivos de datos
 

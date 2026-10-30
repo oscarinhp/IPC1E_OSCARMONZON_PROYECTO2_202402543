@@ -78,7 +78,7 @@ adelanta, se pueden subir 3 o más en un día.
   `dist/Proyecto2_Parqueo.jar`, archivos `datos/residentes.txt` y
   `datos/vehiculos.txt`, verificación de compilación desde el repositorio.
 
-- [ ] **15. `docs: manual tecnico y diagrama de clases`**  
+- [x] **15. `docs: manual tecnico y diagrama de clases`**
   Arquitectura, diagrama de clases, estructuras, hilos, formato de archivos y
   decisiones de diseño.
 
