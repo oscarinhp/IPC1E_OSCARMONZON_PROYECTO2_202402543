@@ -4,7 +4,7 @@ El proyecto se divide en **16 commits semánticos**. La idea es subir mínimo
 **2 commits por día** hasta completar el proyecto. Si la fecha de entrega se
 adelanta, se pueden subir 3 o más en un día.
 
-## Calendario propuesto
+## Calendario propuesto originalmente (histórico)
 
 | Día | Fecha | Commits |
 |---|---|---|
@@ -17,8 +17,11 @@ adelanta, se pueden subir 3 o más en un día.
 | 7 | sábado 31/10/2026 | 13 y 14 |
 | 8 | domingo 01/11/2026 | 15 y 16 |
 
-> Este calendario es una guía. La fecha real de entrega manda; si es antes,
-> adelantamos las tandas necesarias.
+> Este calendario fue una guía inicial, no el registro de ejecución. Las etapas
+> se adelantaron: código y ejecutable hasta la etapa 14, y documentación 15–16,
+> se prepararon antes del 31/10. Consultar las fechas reales de Git en
+> [Informe de desarrollo](docs/Informe_Desarrollo.md). No se deben interpretar
+> las fechas de la tabla como fechas reales ni como autorización para entregar tarde.
 
 ## Commits
 
@@ -82,9 +85,16 @@ adelanta, se pueden subir 3 o más en un día.
   Arquitectura, diagrama de clases, estructuras, hilos, formato de archivos y
   decisiones de diseño.
 
-- [ ] **16. `docs: manual de usuario, informe y README final`**  
+- [x] **16. `docs: manual de usuario, informe y README final`**
   Capturas reales de cada panel, guía de uso, plan por etapas, problemas y
-  soluciones, y reporte de AI Code Detector.
+  soluciones, pruebas reproducibles y README final. El reporte externo de
+  AI Code Detector aún está pendiente; la guía no sustituye el resultado real.
+
+## Pendientes de entrega externos a los 16 commits
+
+- [ ] Obtener y adjuntar el reporte real de AI Code Detector.
+- [ ] Confirmar que `EduardoAjsivinac` esté agregado como colaborador.
+- [ ] Revisar con el docente la asistencia de IA y preparar la defensa del código.
 
 ## Regla de trabajo
 

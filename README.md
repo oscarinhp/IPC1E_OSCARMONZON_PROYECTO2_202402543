@@ -37,7 +37,12 @@ semántico; el plan completo está en [`PLAN_COMMITS.md`](PLAN_COMMITS.md).
 - [x] Etapa 13: simulación completa (llegada → cola → garita → espacio → salida → eventos).
 - [x] Etapa 14: JAR ejecutable versionado y datos de ejemplo en `datos/`.
 - [x] Etapa 15: [manual técnico](docs/Manual_Tecnico.md) y [diagramas](docs/diagramas/Clases_y_Flujo.md).
-- [ ] Etapa 16: manual de usuario con capturas e informe de desarrollo.
+- [x] Etapa 16: [manual de usuario](docs/Manual_Usuario.md), siete capturas reales e [informe de desarrollo](docs/Informe_Desarrollo.md).
+
+Las 16 etapas están registradas; esto no significa que todos los requisitos
+externos de entrega estén cerrados. Falta adjuntar el reporte real de AI Code
+Detector y confirmar al auxiliar como colaborador. Las limitaciones funcionales
+conocidas se detallan en los manuales.
 
 ## Formato de los archivos de datos
 
@@ -59,9 +64,12 @@ P123ABC|Toyota|Corolla|Blanco|R001
 P456DEF|Honda|Civic|Rojo|R001
 ```
 
-Las líneas vacías o mal formadas se omiten con un aviso y la carga continúa.
+Los nombres de campos de los ejemplos son explicativos: los archivos reales
+**no llevan encabezado**. Las líneas vacías se ignoran; los errores detectados
+de formato o asociación se omiten con un aviso y la carga continúa.
 Los visitantes nunca se guardan en los archivos porque son información
-temporal.
+temporal. Tampoco se guardan ocupación, colas ni historial. El tipo de vehículo
+no figura en este formato: al reiniciar se reconstruye como automóvil.
 
 ## Tecnologías y restricciones
 
@@ -112,7 +120,7 @@ PROYECTO-2/
 │   ├── hilos/            Garitas de entrada y salida
 │   ├── persistencia/     Lectura y escritura de archivos .txt
 │   └── vista/            Ventanas y paneles Swing
-├── datos/                Archivos de ejemplo (se agregan en la etapa 14)
+├── datos/                Residentes y vehículos de ejemplo
 ├── docs/                 Manuales, diagramas e informe
 ├── dist/                 JAR ejecutable (se genera al compilar)
 ├── build.bat / build.sh
@@ -134,13 +142,32 @@ PROYECTO-2/
 
 ## Documentación
 
-La documentación se agrega en las etapas 15 y 16:
+- [Índice y cómo ver los documentos](docs/README.md).
+- [Manual técnico](docs/Manual_Tecnico.md).
+- [Manual de usuario con capturas](docs/Manual_Usuario.md).
+- [Diagramas de clases y flujo](docs/diagramas/Clases_y_Flujo.md).
+- [Informe de desarrollo](docs/Informe_Desarrollo.md).
+- [Pruebas: 31 comprobaciones correctas](docs/pruebas/Resultado_Verificacion.md)
+  y [herramientas para repetirlas](docs/herramientas/README.md).
+- [Estado pendiente del reporte de AI Code Detector](docs/Reporte_AI_Code_Detector.md).
 
-- `docs/Manual_Tecnico.md`
-- `docs/Manual_Usuario.md`
-- `docs/Informe_Desarrollo.md`
-- `docs/diagramas/`
-- `docs/capturas/`
+Abrir los enlaces en GitHub o los archivos `.md` en VS Code con **Ctrl+Shift+V**.
+Los manuales están en Markdown, no en PDF.
+
+## Precauciones y estado de entrega
+
+- Guardar y salir normalmente; no hay guardado automático. Conservar copias
+  de `datos/` antes de probar la simulación.
+- El alta/edición de residentes puede requerir **Ver todos** para releer la tabla;
+  si no aparece en otros selectores, guardar/cerrar/reabrir.
+- Los estados de garitas se notifican al encolar y al finalizar la atención,
+  no en cada fase intermedia. Ver más limitaciones en el manual técnico.
+- Confirmar en GitHub la colaboración de `EduardoAjsivinac`; no se ha verificado
+  su aceptación desde esta documentación.
+- El código y los documentos se elaboraron con asistencia de IA. La rúbrica
+  advierte penalizaciones por uso mayoritario de IA; revisar su admisibilidad
+  con el docente y declarar la asistencia real. No se certifica autoría humana
+  exclusiva ni se ha obtenido aún el reporte solicitado de AI Code Detector.
 
 ---
 
