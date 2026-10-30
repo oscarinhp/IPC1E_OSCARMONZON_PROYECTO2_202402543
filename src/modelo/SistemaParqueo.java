@@ -74,6 +74,7 @@ public class SistemaParqueo {
                         "El ID " + id + " ya pertenece a otro residente.");
             }
             residentes.agregar(residente);
+            notificarCambio();
             return residente;
         }
     }
@@ -97,6 +98,7 @@ public class SistemaParqueo {
             actual.setNombre(nombre);
             actual.setCasa(casa);
             actual.setSocio(socio);
+            notificarCambio();
             return true;
         }
     }

@@ -8,6 +8,10 @@
 
 **Versión documentada:** etapa 14, commit `12d01ba`; documentación en etapas 15–16.
 
+**Corrección posterior:** el alta y la edición de residentes ahora llaman a
+`notificarCambio()`. El observador agenda el refresco de tabla y selectores en
+el EDT sin reiniciar. Prueba: `docs/herramientas/VerificarRefrescoResidentes.java`.
+
 ## 1. Alcance y entorno
 
 Aplicación local en Java y Swing para administrar residentes, sus vehículos y
@@ -216,9 +220,9 @@ la vista previa de VS Code con soporte Mermaid pueden renderizarlo.
   como `AUTOMOVIL`, aunque su placa comience con M. La placa no define el tipo.
 - No hay guardado automático, transacción entre los dos archivos ni copia de
   seguridad. Si falla el guardado se muestra el error, pero el cierre continúa.
-- Los métodos de registro/edición de residentes no notifican todos los cambios
-  al observador; la tabla puede requerir **Ver todos** y otros paneles pueden
-  refrescarse tras otro cambio del sistema. No se presenta como actualización inmediata.
+- El alta/edición de residentes refresca la interfaz mediante el observador.
+  El refresco se agenda con `invokeLater`; si hay una búsqueda activa en la
+  tabla, el filtro sigue aplicándose hasta pulsar **Ver todos**.
 - El registro de visitantes valida nombre y duplicados, pero no todos sus campos
   obligatorios. Completar el formulario y no usar separadores `|` ni saltos de línea.
 - El filtro de eventos se aplica **después** del límite: «Últimos 10» filtra los

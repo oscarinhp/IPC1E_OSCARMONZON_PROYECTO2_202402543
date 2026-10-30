@@ -158,8 +158,8 @@ Los manuales están en Markdown, no en PDF.
 
 - Guardar y salir normalmente; no hay guardado automático. Conservar copias
   de `datos/` antes de probar la simulación.
-- El alta/edición de residentes puede requerir **Ver todos** para releer la tabla;
-  si no aparece en otros selectores, guardar/cerrar/reabrir.
+- El alta/edición de residentes notifica a la interfaz para actualizar la tabla
+  y los selectores sin reiniciar. **Ver todos** permite quitar un filtro de búsqueda.
 - Los estados de garitas se notifican al encolar y al finalizar la atención,
   no en cada fase intermedia. Ver más limitaciones en el manual técnico.
 - Confirmar en GitHub la colaboración de `EduardoAjsivinac`; no se ha verificado

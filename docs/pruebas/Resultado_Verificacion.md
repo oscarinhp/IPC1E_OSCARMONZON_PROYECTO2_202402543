@@ -87,3 +87,29 @@ Ver [capturas y procedencia](../capturas/README.md).
 
 Los problemas conocidos están detallados en el [informe](../Informe_Desarrollo.md).
 Comandos para repetir las pruebas: [herramientas](../herramientas/README.md).
+
+## Regresión posterior: refresco de residentes
+
+Tras corregir las notificaciones de alta y edición, se recompilaron los fuentes
+y se compararon sus clases con las del JAR actualizado: no hubo diferencias.
+Se repitieron las 31 comprobaciones generales usando copias de los datos
+versionados y se ejecutó `VerificarRefrescoResidentes` contra el nuevo JAR.
+
+```text
+OK Selector inicialmente vacio
+OK R015 aparece en Vehiculos sin reiniciar ni refrescar manualmente
+OK Tabla de Residentes actualizada tras alta
+OK Alta con ID emite una notificacion
+OK Alta con ID automatico tambien refresca
+OK Se conserva la seleccion del residente al agregar otro
+OK Edicion refresca tabla y selector
+OK Vehiculo asociado a R015 y visible en su tabla
+OK Vehiculo listo para solicitar entrada
+OK Edicion inexistente no notifica ni altera el sistema
+RESULTADO: 10 comprobaciones de refresco OK.
+```
+
+La regresión usa los paneles reales con `invokeLater`, sin ventanas de diálogo,
+lectura ni escritura de datos personales. Los resultados y el hash inicial de
+este documento corresponden al JAR histórico de la etapa 14; esta sección
+registra la verificación de la corrección posterior, no sustituye aquel hash.

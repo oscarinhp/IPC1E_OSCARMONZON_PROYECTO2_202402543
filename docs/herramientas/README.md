@@ -20,6 +20,19 @@ nueva `persistencia-*` dentro de `$temporal`. Nunca escribe en `datos/`.
 Un fallo lanza `AssertionError` y termina con código distinto de cero.
 Ver el [resultado registrado](../pruebas/Resultado_Verificacion.md).
 
+## Regresion de refresco de residentes
+
+Tras la correccion posterior a las 16 etapas, esta prueba verifica el caso
+R015 / Oscar Lopez: alta con ID indicado y automatico, tabla y selector sin
+reiniciar, conservacion de la seleccion, edicion y asociacion de un vehiculo
+que aparece en Entrada. Utiliza los paneles reales y `invokeLater`, sin leer
+ni escribir `datos/`. Ejecutar contra el JAR actualizado:
+
+```powershell
+javac -encoding UTF-8 -cp dist/Proyecto2_Parqueo.jar -d $temporal docs/herramientas/VerificarRefrescoResidentes.java
+java "-Djava.awt.headless=true" -cp "dist/Proyecto2_Parqueo.jar;$temporal" VerificarRefrescoResidentes
+```
+
 ## Capturar la interfaz
 
 Se necesita un escritorio visible y desbloqueado, sin mover el ratón ni poner

@@ -123,6 +123,18 @@ Se detallan en el [manual técnico](Manual_Tecnico.md) y sus precauciones de uso
 en el [manual de usuario](Manual_Usuario.md). Las correcciones funcionales futuras
 deberán probarse y reflejarse en un JAR nuevo antes de entregar otra versión.
 
+### Corrección posterior: refresco al registrar y editar residentes
+
+Después de las etapas 15–16 se corrigió la falta de avisos al registrar o editar
+residentes: `SistemaParqueo` ahora llama a `notificarCambio()` en ambas operaciones.
+La tabla y el selector de Vehículos se actualizan mediante el observador en el
+EDT sin reiniciar, conservando la selección del residente.
+
+Se actualizó el JAR y se verificó el caso R015 / Oscar Lopez con diez
+comprobaciones nuevas de `VerificarRefrescoResidentes`; también volvieron a pasar
+las 31 comprobaciones generales contra los datos de ejemplo versionados.
+El resto de limitaciones de esta sección no se considera corregido por este cambio.
+
 ## 7. Asistencia de IA, detector y preparación académica
 
 Durante este desarrollo se utilizó un asistente de IA para generar y modificar

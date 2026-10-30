@@ -7,6 +7,9 @@
 Guía de la versión entregada en el commit `12d01ba`. Capturas reales tomadas
 el 29/10/2026 en Windows con Java 17. Los nombres y placas son datos de ejemplo.
 
+Actualización posterior: se corrigió el refresco tras registrar o editar un
+residente. Los pasos siguientes describen ese comportamiento corregido.
+
 ## 1. Abrir el programa
 
 1. Descargar/clonar **el repositorio completo**, incluyendo `datos/` y `dist/`.
@@ -42,7 +45,8 @@ tiene barras de desplazamiento para consultar todos sus espacios.
 2. Dejar el ID vacío para generarlo automáticamente (`R009`, por ejemplo).
 3. Escribir **Nombre** y **Casa / Lote**. Marcar **Socio** solo si corresponde.
 4. Pulsar **Guardar** y aceptar el mensaje con el ID asignado.
-5. Pulsar **Ver todos** para volver a cargar la tabla y comprobar el registro.
+5. Comprobar el registro en la tabla. Si había una búsqueda activa, pulsar
+   **Ver todos** para quitar el filtro.
 
 No usar `|` ni saltos de línea en los datos: esos caracteres interfieren con
 el formato de los archivos. Antes de editar, esperar a que terminen los
@@ -62,10 +66,14 @@ movimientos de garitas para evitar perder la selección al refrescar la tabla.
 
 Debajo de la tabla aparecen los vehículos del residente seleccionado.
 
-**Limitación actual:** el alta/edición de residentes no siempre refresca las
-otras pestañas. Si el nuevo residente no aparece en el selector de Vehículos,
-guardar y salir, y volver a abrir para cargarlo. El manual no presupone un
-refresco inmediato que esta versión no garantiza.
+Al cerrar el mensaje de confirmación, el residente aparece también en el
+selector **Residente dueño** de Vehículos; no hace falta reiniciar. Por ejemplo,
+después de registrar `R015 / Oscar Lopez`, abrir Vehículos, desplegar el selector,
+elegir R015, completar el formulario y pulsar **Agregar vehículo**.
+
+Si la aplicación estaba abierta al instalar esta corrección, guardar y salir
+y abrir la versión actualizada una sola vez: un proceso ya abierto continúa
+usando el código anterior.
 
 ## 3. Vehículos
 
@@ -214,7 +222,7 @@ del aviso y no garantiza recuperar los cambios. Verificar permisos y copias prev
 | `UnsupportedClassVersionError` | Ejecutar con Java compatible o recompilar con el JDK requerido |
 | La ventana no aparece al abrir | Buscar el cuadro de carga detrás de otras ventanas y aceptarlo |
 | No encuentra archivos de datos | Usar `run.bat` o ejecutar desde la carpeta que contiene `datos/` |
-| Nuevos residentes no aparecen | Pulsar **Ver todos**; para otros selectores, guardar/cerrar/reabrir |
+| Nuevos residentes no aparecen | Quitar filtros con **Ver todos**; si seguía abierta la versión anterior, guardar y abrir la versión corregida |
 | No entra un vehículo | Comprobar registro, estado y disponibilidad en la zona autorizada |
 | Rechaza placa duplicada | Usar una placa única o el vehículo ya registrado |
 | No permite borrar | Pedir salida y esperar hasta que el vehículo esté fuera |
